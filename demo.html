@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-2 p-4">
+  <!-- 1st div -->
+  <div class="bg-red-200 p-4 rounded order-1 md:order-1">1</div>
+
+  <!-- 2nd div -->
+  <div class="bg-blue-200 p-4 rounded order-2 md:order-2">2</div>
+
+  <!-- 3rd div -->
+  <div class="bg-green-200 p-4 rounded order-3 md:order-3">3</div>
+
+  <!-- 4th div (Mobile 2nd position, Desktop 4th position) -->
+  <div class="bg-yellow-200 p-4 rounded order-4 md:order-4 md:row-span-1 sm:order-2">
+    4 (span div)
+  </div>
+</section>
+
+</body>
+</html>
