@@ -15,6 +15,15 @@ let coinElement = document.getElementById("coin");
 let coin = parseInt(coinElement.innerText);
 for (const call of calls) {
   call.addEventListener("click", function () {
+    // date add
+    const date = document.getElementById("date");
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, "0");
+    const minutes = now.getMinutes().toString().padStart(2, "0");
+    const seconds = now.getSeconds().toString().padStart(2, "0");
+
+    const currentTime = `${hours}:${minutes}:${seconds}`;
+    date.innerText = currentTime;
     // button theke parent card khuje ber kora
     const parentCard = call.closest(".card");
 
@@ -51,7 +60,7 @@ for (const call of calls) {
 // copyBtn add
 
 const copyButtons = document.getElementsByClassName("copy");
- let countNumber = 0; // click counter tracker
+let countNumber = 0; // click counter tracker
 
 for (const copyBtn of copyButtons) {
   copyBtn.addEventListener("click", function () {
@@ -64,8 +73,8 @@ for (const copyBtn of copyButtons) {
     });
 
     // copy count update
-    countNumber++;                     // tracker update
-    const copyCount = document.getElementById('copy-count');
+    countNumber++; // tracker update
+    const copyCount = document.getElementById("copy-count");
     copyCount.innerText = countNumber; // display update
     console.log("Copy count:", countNumber);
   });
