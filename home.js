@@ -15,12 +15,17 @@ let coinElement = document.getElementById("coin");
 let coin = parseInt(coinElement.innerText);
 for (const call of calls) {
   call.addEventListener("click", function () {
+    // coin check
+      if (coin < 20) {
+      alert("আপনার কাছে পর্যাপ্ত কয়েন নেই!");
+      return; // coin কম হলে এখানেই থেমে যাবে
+    }
     // button theke parent card khuje ber kora
     const parentCard = call.closest(".card");
       // parent theke h1 ar p dhora
     const title = parentCard.querySelector("h1").innerText;
     const span = parentCard.querySelector("span").innerText;
-    alert(title + span)
+    
     // clear histry add
     const callHistoryDiv = document.getElementById('call-histry')
     const histryTitle = callHistoryDiv.querySelector('h1')
@@ -35,7 +40,9 @@ for (const call of calls) {
     }
     })
     // coin section add
+    
     coin = coin - 20;
     coinElement.innerText = coin;
+    alert(title + span)
   });
 }
